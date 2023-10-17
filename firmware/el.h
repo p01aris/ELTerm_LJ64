@@ -40,10 +40,10 @@
 #define EL_LDATA_SM (1)
 
 // Screen related
-#define EL_TARGET_PIXCLK (4500000)
+#define EL_TARGET_PIXCLK (4000000)
 
 #define SCR_WIDTH (640)
-#define SCR_HEIGHT (480)
+#define SCR_HEIGHT (400)
 // Additional line for smooth scrolling
 #define SCR_ADD_HEIGHT (32)
 #define SCR_BUF_HEIGHT (SCR_HEIGHT + SCR_ADD_HEIGHT)

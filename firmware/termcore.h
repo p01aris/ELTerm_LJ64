@@ -25,7 +25,7 @@
 
 // Additional line for scrolling
 #define TERM_WIDTH 80
-#define TERM_HEIGHT 30
+#define TERM_HEIGHT 25
 #define TERM_BUF_HEIGHT (TERM_HEIGHT+2)
 
 #define COLOR_BLACK (0)

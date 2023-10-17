@@ -97,7 +97,7 @@ static void el_pio_irq_handler() {
         el_dma_config_chainning(el_udma_chan, el_udma_chan);
         el_dma_config_chainning(el_ldma_chan, el_ldma_chan);
     }
-    else if (frame_scroll_lines < (240 + SCR_ADD_HEIGHT)) {
+    else if (frame_scroll_lines < (SCR_REFRESH_LINES + SCR_ADD_HEIGHT)) {
         // 3 DMA used, upper screen uses 1 DMA, lower screen uses 2 DMA
         uint32_t *rdptr_ud = (uint32_t *)(framebuf + SCR_STRIDE * frame_scroll_lines);
         uint32_t *rdptr_ld = (uint32_t *)(framebuf + SCR_STRIDE * frame_scroll_lines + SCR_STRIDE * SCR_HEIGHT / 2);
@@ -111,7 +111,7 @@ static void el_pio_irq_handler() {
         el_dma_config_chainning(el_udma_chan, el_udma_chan);
         el_dma_config_chainning(el_ldma_chan, el_wrap_chan);
     }
-    else if (frame_scroll_lines == (240 + SCR_ADD_HEIGHT)) {
+    else if (frame_scroll_lines == (SCR_REFRESH_LINES + SCR_ADD_HEIGHT)) {
         uint32_t *rdptr_ud = (uint32_t *)(framebuf + SCR_STRIDE * (SCR_HEIGHT / 2 + SCR_ADD_HEIGHT));
         uint32_t *rdptr_ld = (uint32_t *)framebuf;
         dma_channel_set_read_addr(el_udma_chan, rdptr_ud, false);
